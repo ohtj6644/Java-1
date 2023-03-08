@@ -29,11 +29,12 @@ public class Main {
         } else {
             System.out.println(("미성년자입니다"));
         }
-        if (age>=20 && age <=34){
+        if (age >= 20 && age <= 34) {
             System.out.println("청년입니다.");
         } else {
             System.out.println("청년이 아닙니다.");
         }
+        System.out.println("==0308homeSetting==");
 
     }
 }
