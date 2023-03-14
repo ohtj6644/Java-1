@@ -1,0 +1,543 @@
+
+
+
+//    페라리 a페라리 = new 페라리();
+//    자동차 a자동차 = new 페라리();
+//
+//    a자동차 = a페라리;
+//
+//    페라리 a페라리2 = (페라리)a자동차;
+//    //****수동형변환
+//
+//    a페라리2.뚜껑이_열리다();
+//
+//
+//abstract class 자동차 {
+//    abstract void 달리다();
+//    abstract void 서다();
+//}
+//
+//class 페라리 extends 자동차 {
+//    void 달리다() {
+//
+//    }
+//    void 서다(){
+//
+//    }
+//    void 뚜껑이_열리다(){
+//        System.out.println("뚜껑이 열리다");
+//    }
+//}
+//
+//
+//
+
+
+
+
+
+
+//        샤오미TV a샤오미TV = new 샤오미TV();
+//        삼성TV a삼성TV = new 삼성TV();
+//        LGTV aLGTV = new LGTV();
+//
+//
+//        표준TV a표준TV = new 샤오미TV();
+//
+//        a표준TV.켜기();
+//        a표준TV.끄기();
+//
+//        a표준TV = new 삼성TV();
+//        a표준TV.켜기();
+//        a표준TV.끄기();
+//
+//        a표준TV = new LGTV();
+//        a표준TV.켜기();
+//        a표준TV.끄기();
+
+//abstract class 표준TV {
+//    abstract void 켜기();
+//
+//    abstract void 끄기();
+//}
+//
+//
+//class 샤오미TV extends 표준TV {
+//    void 켜기() {
+//        System.out.println("샤오미 TV 를 켭니다");
+//    }
+//
+//    void 끄기() {
+//        System.out.println("샤오미 TV 를 끕니다");
+//    }
+//
+//    void vr켜기() {
+//        System.out.println("샤오미 TV vr 을 켭니다");
+//    }
+//}
+//
+//class 삼성TV extends 표준TV {
+//    void 켜기() {
+//        System.out.println("삼성 TV 를 켭니다");
+//    }
+//
+//    void 끄기() {
+//        System.out.println("삼성 TV 를 끕니다");
+//    }
+//
+//    void ar켜기() {
+//        System.out.println("삼성 TV ar 을 켭니다");
+//    }
+//}
+//
+//class LGTV extends 표준TV {
+//    void 켜기() {
+//        System.out.println("LGTV를 켭니다");
+//    }
+//
+//    void 끄기() {
+//        System.out.println("LGTV를 끕니다");
+//    }
+//
+//    void 게임모드전환() {
+//        System.out.println("LGTV 를 게임모드로 전환합니다");
+//    }
+//}
+
+
+//     전사 a전사 = new 전사();
+//     a전사.공격("브라이언","칼");
+//     a전사.공격("필립","창");
+//     a전사.공격("마크","지팡이");
+//     a전사.재공격();
+//     a전사.재공격();
+
+//class 전사 {
+//    String name;
+//    String weapon;
+//    void 공격 (String name , String weapon) {
+//        this.name = name;
+//        this.weapon= weapon;
+//        System.out.printf("%s 가 %s 로 공격합니다\n" ,name,weapon);
+//    }
+//    void 재공격 (){
+//        System.out.printf("%s 가 %s 로 공격합니다\n" ,this.name,this.weapon);
+//    }
+//}
+
+
+//    전사 a전사 = new 전사();
+//
+//    a전사.공격("브라이언","칼");
+//    a전사.재공격();
+//    a전사.공격("필립", "창");
+//    a전사.공격("마크","지팡이");
+//    a전사.재공격();
+//    a전사.재공격();
+
+//class 전사 {
+//
+//    String c;                      ///////////////////////////지역변수
+//
+//    void 공격(String a, String b) { //////////////////////////매개변수
+//        c = (a + "(이)가 " + b + "(으)로 공격합니다");
+//        System.out.println(c);
+//    }
+//
+//    void 재공격() {
+//        System.out.println(c);
+//    }
+//}
+
+// ****** a,b 대신 name,weapon 의 변수를 지정해서 c 안쓰고 쓸 수 있음   ### 매개변수, 지역변수
+
+
+//    TV a리모콘 = new 삼성TV();
+//        a리모콘.채널업();
+
+//abstract class TV {
+//     void 채널업() {
+//    }
+//}
+//
+//class 삼성TV extends TV {
+//    void 채널업() {
+//        System.out.println("채널을 업 합니다 ");
+//    }
+//}
+
+
+//          무기 a무기 = new 칼();
+////        a무기.공격();
+////        a무기.방어();
+//class 무기 {
+// void 공격 (){
+//     //형변환을 할때는 사용할 메서드와 같은 메서드를 생성
+// }
+// void 방어 (){
+//
+// }
+//}
+//
+//class 칼 extends 무기 {
+//    void 공격 (){
+//        System.out.println("칼로 공격합니다");
+//    }
+//    void 방어 (){
+//        System.out.println("칼로 방어합니다");
+//    }
+//}
+
+
+//class 오리 {
+//    void 날다() {
+//        System.out.println("오리가 날개로 날아갑니다");
+//    }
+//}
+
+
+//class 청둥오리 extends 오리 {
+//    void 헤엄치다 (){
+//        System.out.println("오리가 헤엄치다");
+//    }
+//    void 날다 (){
+//        System.out.println("느리게 날다 ");
+//    }
+//
+//}
+//class 흰오리 extends 오리 {
+//    void 수영하다 (){
+//        System.out.println("오리가 수영하다");
+//    }
+//    void 날다 (){
+//        System.out.println("빠르게 날다 ");
+//    }
+//}
+//
+//class 로봇오리  extends 오리 {
+//    //느리게날다
+//    //수영하다
+//}
+
+
+/////////////////////////0313 클래스 상속 //////////////////////////
+
+/////
+////        청둥오리 청둥오리1 = new 청둥오리();
+////        청둥오리1.날다();
+////
+////        흰오리 흰오리1 = new 흰오리 ();
+////        흰오리1.날다();
+////
+////        고무오리 고무오리a = new 고무오리();
+////        고무오리a.날다();
+////
+////        고무오리2 고무오리2 = new 고무오리2();
+////        고무오리2.날다();
+//
+//
+//class 오리 {
+//    void 날다(){
+//        System.out.println("오리가 날개로 날아갑니다");
+//    }
+//}
+//
+//class 청둥오리 extends 오리 {
+//
+//}
+//class 흰오리 extends 오리 {
+//
+//}
+//class 고무오리 extends 오리{
+//    void 날다 (){
+//        System.out.println("고무오리는 날 수 없습니다");
+//    }
+//}
+//class 고무오리2 extends 고무오리{
+//
+//}
+
+
+//    청둥오리 a청둥오리 = new 청둥오리();
+//        a청둥오리.날다();
+//        // 출력 : 오리가 날개로 날아갑니다.
+//
+//        흰오리 a흰오리 = new 흰오리();
+//        a흰오리.날다();
+//        // 출력 : 오리가 날개로 날아갑니다.
+//
+//        고무오리 a고무오리 = new 고무오리();
+//        a고무오리.날다();
+//
+//        고무2오리 a고무2오리 = new 고무2오리();
+//        a고무2오리.날다();
+//class 오리 {
+//    void 날다 (){
+//        System.out.println("오리가 날개로 날아갑니다.");
+//    }
+//}
+//class 청둥오리 extends 오리 {
+//
+//}
+//class 흰오리 extends 오리 {
+//
+//}
+//class 고무오리 extends 오리 {
+//    void 날다(){
+//        System.out.println("저는 날 수 없어요. ㅜㅠ");
+//    }
+//}
+//
+//class 고무2오리 extends 고무오리 {
+//
+//
+//}
+
+
+//    검은고양이 a검은고양이 = new 검은고양이();
+//    a검은고양이.숨쉬다();
+//
+//    흰고양이 a흰고양이 = new 흰고양이();
+//    a흰고양이.달리다();
+//
+//    회색고양이 a회색고양이 = new 회색고양이();
+//    a회색고양이.달리다();
+
+
+//
+//class 고양이 {
+//    void 숨쉬다 ( ){
+//        System.out.println("숨쉬다");
+//    }
+//    void 달리다 ( ){
+//        System.out.println("달리다");
+//    }
+//    void 뛰어넘다 ( ){
+//        System.out.println("뛰어넘다");
+//    }
+//    void 간택하다 ( ){
+//        System.out.println("간택하다");
+//    }
+//}
+//
+//class 흰고양이 extends 고양이 {
+//    void 마법을쓰다 () {
+//        System.out.println("마법을 쓰다");
+//    }
+//}
+//
+//class 검은고양이 extends 고양이 {
+//    void 미래를예지하다 () {
+//        System.out.println("미래를예지하다");
+//    }
+//}
+//
+//class 회색고양이 extends 고양이 {
+//    void 달리다 (){
+//        System.out.println("고양이가 달리다");
+//    }
+//}
+//
+//
+//
+//
+//
+
+
+//    계산기 계산기1 = new 계산기();
+//
+//        계산기1.합산(5);
+//
+//                System.out.println(계산기1.합산1(2,4));
+
+
+//class 계산기 {
+//
+//
+//    void 합산(int n) {
+//        int j=0;
+//        for (int i = 1; i <= n; i++) {
+//            j = j+i;
+//
+//        }
+//        System.out.println(j);
+//    }
+//    int 합산1(int n, int m){
+//        int j = 0;
+//        for (int i = n; i <= m; i++) {
+//            j = j+i;
+//
+//        }
+//        return j;
+//
+//    }
+//}
+
+
+//    계산기 계산기1 = new 계산기();
+//
+//        System.out.println("더하기 값은 "+ 계산기1.더하기(1,3));
+//                System.out.println("빼기기 값은 "+ 계산기1.빼기(1,3));
+//                System.out.println("나누기 값은 "+ 계산기1.나누기(3,3));
+//                System.out.println("곱하기 값은 "+ 계산기1.곱하기(1,3));
+//class 계산기 {
+//
+//
+//    double 더하기(double a, double b) {
+//
+//        return(a + b);
+//    }
+//
+//    double 빼기(double a, double b) {
+//        return(a - b);
+//    }
+//
+//    double 나누기(double a, double b) {
+//        return(a/b);
+//    }
+//
+//    double 곱하기(double a, double b) {
+//        return(a*b);
+//    }
+//
+//}
+
+
+//    person p1 = new person();
+//            p1.나이 = 100;
+//                    p1.인류평균나이 += 100;
+//
+//                    person p2 = new person();
+//                    p2.나이 = 200;
+//                    p2.인류평균나이 += 200;
+//
+//                    person p3 = new person();
+//                    p3.나이 = 400;
+//                    p3.인류평균나이+=300;
+//
+//                    System.out.println(p1.인류평균나이);
+//                    p1.인류평균나이소개();
+//
+//
+//class person {
+//    int 나이;
+//    static int 인류평균나이;
+//
+//    void 인류평균나이소개() {
+//        System.out.println("제 나이는 " + this.나이 + " 살 입니다.");
+//        System.out.println("인류평균나이는 " + 인류평균나이/3 + "살 입니다.");
+//    }
+//}
+
+
+//        int a = 50;
+//        int[] arr = {1, 2, 3};
+//        //인트배열 자료형 어레이 선언 = 새로운 배열 3번째자리까지 생성
+//        System.out.println(arr);
+//        int sum = 0;
+//        for (int i = 0; i < arr.length; i++) {
+//            sum += arr[i];
+//        }
+//
+//        System.out.println(sum / arr.length);
+
+//        int[] arr1 = new int[3];
+//        arr1[0] = 1;
+//        arr1[1] = 11;
+//        arr1[2] = 111;
+//
+//        System.out.println(arr1[0]);
+//        System.out.println(arr1[1]);
+//        System.out.println(arr1[2]);
+
+
+//        //설계도 설계도이름  = new 설계도();
+////        캐릭터 캐릭터a = new 캐릭터();
+////        캐릭터a.이름 = "아름";
+////        캐릭터a.키 = 170;
+////        캐릭터a.나이 = 20;
+////        캐릭터a.자기소개();
+////
+////        캐릭터 캐릭터b = new 캐릭터();
+////        캐릭터b.이름 = "철수";
+////        캐릭터b.키=171;
+////        캐릭터b.나이=21;
+////        캐릭터b.자기소개();
+//
+//        자동차 자동차a = new 자동차 ();
+//        자동차a.속력=70;
+//        자동차a.번호=1;
+//        자동차a.달리다();
+// 자동차 자동차속력,번호 / 달리다 누르면 해당속력으로 달린다 출력
+
+//class 자동차 {
+//    int 속력 ;
+//    int 번호 ;
+//    void 달리다 (){
+//        System.out.println(this.번호+"번 자동차가 현재"+this.속력+"km/h로 달리고 있습니다.");
+//    }
+//}
+
+
+//class 캐릭터 {
+//    String 이름;
+//    int 키;
+//    int 나이;
+//
+//    void 자기소개() {
+//        System.out.println("안녕하세요. 저는 " + this.이름 + " 입니다.\n" +"제 키는 "+ this.키 + "입니다.\n" + "나이는" + this.나이 + "입니다.");
+//    }
+//};
+// 문제 : 아래와 같이 출력해주세요.
+
+//class Main {
+//    public static void main(String[] args) {
+////        int a = 50;
+////        int[] arr = {1, 2, 3};
+////        //인트배열 자료형 어레이 선언 = 새로운 배열 3번째자리까지 생성
+////        System.out.println(arr);
+////        int sum = 0;
+////        for (int i = 0; i < arr.length; i++) {
+////            sum += arr[i];
+////        }
+////
+////        System.out.println(sum / arr.length);
+//
+////        int[] arr1 = new int[3];
+////        arr1[0] = 1;
+////        arr1[1] = 11;
+////        arr1[2] = 111;
+////
+////        System.out.println(arr1[0]);
+////        System.out.println(arr1[1]);
+////        System.out.println(arr1[2]);
+//
+//
+//        //설계도 설계도이름  = new 설계도();
+//        캐릭터 캐릭터a = new 캐릭터();
+//        캐릭터a.이름 = "아름";
+//        캐릭터a.키 = 170;
+//        캐릭터a.나이 = 20;
+//        캐릭터a.자기소개();
+//
+//        캐릭터 캐릭터b = new 캐릭터();
+//        캐릭터b.이름 = "철수";
+//        캐릭터b.키=171;
+//        캐릭터b.나이=21;
+//        캐릭터b.자기소개();
+//
+//
+//    }
+//
+//    ;
+//};
+//
+//class 캐릭터 {
+//    String 이름;
+//    int 키;
+//    int 나이;
+//
+//    void 자기소개() {
+//        System.out.println("안녕하세요. 저는 " + this.이름 + " 입니다.\n" +"제 키는 "+ this.키 + "입니다.\n" + "나이는" + this.나이 + "입니다.");
+//    }
+//};
