@@ -1,4 +1,19 @@
 package org.example;
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("숫자: ");
+
+        int input = scan.nextInt();
+        System.out.printf("입력된 숫자 : %d\n", input);
+        scan.close();
+
+    }
+}
+
 
 
 //API 어플리케이션 프로그래밍 인터페이스
@@ -12,27 +27,30 @@ package org.example;
 //
 //트라이 후 문제가 있을때만 캐치 실행
 
-// *******************************************스캐너**************************************
- add
+
+class Main {
+    public static void main(String[] args) {
+    사람 a사람 = new 사람();
+
+    a사람.setId(20);
+
+        System.out.println("제 번호는"+a사람.getId()+"입니다 ");
+
+    }
+}
 
 
+class 사람 {
+    private int id=10;
 
+    void setId (int id) {
+        this.id=id;
+    }
+    int getId (){
+        return this.id;
+    }
+}
 
-
-//    사람 a사람 = new 사람();
-//
-//    a사람.setId(20);
-//class 사람 {
-//    private int id=10;
-//
-//    void setId (int id) {
-//        this.id=id;
-//    }
-//    int getId (){
-//        return this.id;
-//    }
-//}
-//
 
 
 
@@ -680,4 +698,3 @@ package org.example;
 //    창(){
 //        무기이름 = "창";
 //    }
-//}
