@@ -1,683 +1,150 @@
 package org.example;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
-//API 어플리케이션 프로그래밍 인터페이스
+class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        // 스캐너 시작할때 무조건 시스템인.
+        String input;
+        // 입력값 받을 변수
+        while (true){
+        // 트루가 될때까지 반복
+            try{
+                // 시도한다
+                System.out.println("숫자: ");
+                //입력 물음
+                input= scan.
+                //물음값 인트를 인풋 변수에 담는다
+                scan.nextLine();
+                //??
 
-//********************************예외처리 **********************
-//try {
-// //...
-//}cach (타입 e ) {
-// //...
-//}
-//
-//트라이 후 문제가 있을때만 캐치 실행
+            }catch(InputMismatchException e){
+                // 인풋 에러가 떴을경우
+                scan.nextLine();
+                System.out.println("문자만 입력하세요");
+                // 정수만 입력하세요 출력
+                continue;
+                //다시반복
+            }
+            break;
+            // 트루값일 경우 반복종료
 
-// *******************************************스캐너**************************************
- add
+        }
+        System.out.println("입력값 : "+ input );
+        scan.close();
+        // 스캔 종료
 
-
-
-
-
-//    사람 a사람 = new 사람();
-//
-//    a사람.setId(20);
-//class 사람 {
-//    private int id=10;
-//
-//    void setId (int id) {
-//        this.id=id;
-//    }
-//    int getId (){
-//        return this.id;
-//    }
-//}
-//
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //    사람 a사람 = new 사람();
-//    a사람.setid(20);
-//
-//        System.out.println("제 번호는"+a사람.getid()+"입니다");
-//
+    }
+}
+/////////////////////////////////////////////////// 스캐너 입력 기본 ////////////////////////
+//class Main {
+//    public static void main(String[] args) {
+//        Scanner scan = new Scanner(System.in);
+//        //스캐너 쓸때 무조건 써야함
+//        System.out.println("숫자: ");
+//        // 스캐너 물음 문구
+//        int input = scan.nextInt();
+//        // 물음에 대한 값을 인트입력하고 그 값을 인풋이라는 변수에 담는다
+//        System.out.printf("입력된 숫자 %d \n", input);
+//        // 값을 입력했을때 나오는 출력값
+//        scan.close();
+//        // 스캔 종료
 //    }
 //}
-//// ****************************************프라이빗 변수 변경, 접근 방법 ***************************
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//        Scanner scan = new Scanner(System.in);
 //
+//        int age;
+//        while (true) {
+//            System.out.print("숫자를 입력해주세요:");
+//            try {
+//                age = scan.nextInt();
+//                scan.nextLine();
+//                if (age < 1) {
+//                    System.out.println("1 이상의 정수를 입력해주세요");
+//                    continue;
+//                }
+//            } catch (InputMismatchException e) {
+//                scan.nextLine();
+//                System.out.println("정수 숫자만 입력하세요 ");
+//                continue;
+//            }
+//            break;
+//        }
+//
+//        System.out.println(age+ "살");
+//
+//    }
+//
+//}
+//
+
+//****************************************트라이 캐치
+//    int[] datas = new int[2];
+//    try{
+//    //ArrayIndexOutOfBoundsException e
+//    //System.out.println("이런.. 오류가 발생했군요.");
+//    work(datas);    }catch (ArrayIndexOutOfBoundsException e){
+//        System.out.println("이런.. 오류가 발생했군요.");
+//    }
+//
+//
+//    }
+//    static void work(int[] datas){
+//        datas[0] = 10;
+//        datas[1] = 20;
+//
+//        datas[2] = 30;
+//    }
+//}
+
+
+//   사람 a사람 = new 사람();
+//        a사람.setId(20);
+//
+//        System.out.println("제 번호는 " + a사람.getId() + "입니다");
+//        //출력- 제 번호는 20입니다
 //class 사람 {
 //    private int id;
-//    void setid(int id){
-//        this.id=id;
+//
+//    void setId(int id) {
+//        this.id = id;
 //    }
-//    int getid(){
+//
+//    ;
+//
+//    int getId() {
 //        return this.id;
 //    }
 //
 //}
 
 
-
-
-//    사람 a사람 = new 홍길동();
-//    변호사 a변호사 = (변호사)a사람;
-//    치과의사 a치과의사 = (치과의사)a사람;
-//    성화봉송자 a성화봉송자 = (성화봉송자)a사람;
-//class 사람 {}
-//class 홍길동 extends 사람 implements 변호사 ,치과의사 , 성화봉송자 {}
-//interface 변호사 {}
-//interface 치과의사{}
-//interface 성화봉송자{}
+// public static void main(String[] args) {
+// new 사람();
 //
 
-
-
-
-
-
-//        사람 a사람 = new 홍길동();
-//
-//        변호사 a변호사 = (변호사)a사람;
-//    }
-//}
-//class 사람{}
-//class 홍길동 extends 사람 implements 변호사 {}
-//interface 변호사{}
-
-
-
-
-
-//code.oa.gg/java8/938
-//// 문제 : 아래와 같이 출력되도록 해주세요. init() 메세드에 의해서 출력되어야 합니다.
-//// 조건 : 사람 클래스의 생성자는 사용할 수 없습니다, 동물 클래스를 수정하여 문제를 풀어주세요.
-//// 힌트 : 모든 생성자는 자신의 일을 하기 전에 super(); 부터 실행합니다.
-//// 힌트 : 모든 생성자는 자신의 일을 하기 전에 부모클래스의 생성자 부터 실행합니다.
-//
-//class Main {
-//    public static void main(String[] args) {
-//        new 사람();
-//        // 출력 : 사람이 초기화 됩니다.
-//    }
-//}
 //
 //class 동물 {
-//    // 수정가능지역 시작
-//    동물(){
-//        super();
-//
-//    }
-//    void init();
-//    // 수정가능지역 끝
+// 동물 ( String 이름 ){
+//  System.out.println("동물(String 이름) 실행됨!");
+//  System.out.println("이름:"+이름);
+// }
+// 동물( String 이름 , int 나이){
+//  System.out.println("동물(String 이름 , int 나이) 실행됨!");
+//  System.out.println("이름:"+이름);
+//  System.out.println("나이:"+ 나이);
+// }
 //}
 //
 //class 사람 extends 동물 {
-//    void init() {
-//        System.out.println("사람이 초기화 됩니다.");
-//    }
-//}
-//
-
-
-
-
-//class Main {
-//    public static void main(String[] args) {
-//        new 사람();
-//    }
-//}
-//
-//class 동물 {
-//    동물(String 이름) {
-//        System.out.println("동물(String 이름) 실행됨!");
-//        System.out.println("이름 : " + 이름);
-//    }
-//    동물(String 이름, int 나이) {
-//        System.out.println("동물(String 이름, int 나이) 실행됨!");
-//        System.out.println("이름 : " + 이름);
-//        System.out.println("나이 : " + 나이);
-//    }
-//}
-//
-//class 사람 extends 동물 {
-//    사람(){
-//        super("코끼리",22);
-//
-//    }
-//}
-
-
-
-
-
-
-//
-//// 문제 : 아래 질문에 답해주세요.
-//
-//// 1 : 사람 클래스 안에 있는 생성자의 개수는?1개  X 답: 1+? (오브젝트 개수를 알 수 없음 )
-//// 2 : 사람 클래스의 부모 클래스는? 없음 X 답: Object
-//// 3 : 사람 클래스의 부모 클래스에 생성자가 1개 있다고 가정할 때 사람 클래스 안에 있는 생성자의 총 개수는? 2개 O
-//
-//class Main {
-//    public static void main(String[] args) {
-//        System.out.println("Hello world!");
-//    }
-//}
-//
-//
-//
-//class 사람 {
-//
-//}
-//
-//
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//class Main {
-//    public static void main(String[] args) {
-//        System.out.println("== 사람객체 생성시작 ==");
-//        new 사람();
-//        System.out.println("== 사람객체 생성끝 ==");
-//
-//        System.out.println("== 청둥오리객체 생성시작 ==");
-//        new 청둥오리();
-//        System.out.println("== 청둥오리객체 생성끝 ==");
-//		/* 출력
-//		== 청둥오리객체 생성시작 ==
-//		생물이 생성되었습니다.
-//		동물이 생성되었습니다.
-//		오리가 생성되었습니다.
-//		청둥오리 생성되었습니다.
-//		== 청둥오리객체 생성끝 ==
-//		*/
-//    }
-//}
-//
-//class 생물 {
-//    생물() {
-//        // 이 함수는 부모 클래스 생성자를 자동으로 호출합니다.
-//        System.out.println("생물이 생성되었습니다.");
-//    }
-//}
-//class 동물 extends 생물 {
-//    동물() {
-//        super();// super(); // 부모 클래스의 생성자를 호출합니다. 생략가능합니다.
-//        // 이 함수는 부모 클래스 생성자를 자동으로 호출합니다.
-//
-//        System.out.println("동물이 생성되었습니다.");
-//    }
-//
-//}
-//class 사람 extends 동물 {
-//
-//    사람() {
-//         // 부모 클래스의 생성자를 호출합니다.
-//        // 이 함수는 부모 클래스 생성자를 자동으로 호출합니다.
-//
-//        System.out.println("사람이 생성되었습니다.");
-//    }
-//}
-//
-//
-//class 오리 extends 동물 {
-//    오리(){
-//        System.out.println("오리가 생성되었습니다.");
-//    }
-//}
-//
-//class 청둥오리 extends 오리 {
-//    청둥오리(){
-//        super();
-//        System.out.println("청둥오리가 생성되었습니다");
-//    }
-//}
-
-
-
-
-
-//계산기 a계산기 = new 계산기();
-//
-//        System.out.println(a계산기.더하기(10, 20));
-//        // 출력 : 30
-//
-//        System.out.println(a계산기.더하기(10, 20, 30));
-//        // 출력 : 60
-//
-//        System.out.println(a계산기.더하기(10.5, 20, 30));
-//        // 출력 : 60.5
-//class 계산기 {
-//    int 더하기 (int a , int b){
-//        return a+b;
-//    }
-//    int 더하기 (int a , int b , int c){
-//        return a+b+c;
-//    }
-//
-//    double 더하기 (double a, double b , double c){
-//        return  a+b+c;
-//    }
-//}
-
-
-
-//     new 사람();
-//
-//        new 사람(10);
-//
-//        new 사람(20);
-//class 사람 {
-//    사람 (){
-//        System.out.println("사람이 태어났습니다");
-//    }
-//
-//    사람(int a){
-//        System.out.println("태어나서부터"+a+"살 인 사람이 태어났습니다");
-//    }
-//}
-//
-//
-
-
-
-//    청둥오리 a청둥오리 = new 청둥오리();
-//        a청둥오리.날다();
-//                // 출력 : 오리가 날개로 날아갑니다.
-//
-//                흰오리 a흰오리 = new 흰오리();
-//                a흰오리.날다();
-//                // 출력 : 오리가 날개로 날아갑니다.
-//
-//                고무오리 a고무오리 = new 고무오리();
-//                a고무오리.날다();
-//                // 출력 : 저는 날 수 없어요. ㅜㅠ
-//
-//                고무2오리 a고무2오리 = new 고무2오리();
-//                a고무2오리.날다();
-//// 출력 : 저는 날 수 없어요. ㅜㅠ
-//
-//class 오리 {
-//    비행아이템 a비행아이템;
-//    void 날다 (){
-//        a비행아이템.작동();
-//    }
-//}
-//
-//class 청둥오리 extends 오리{
-//    청둥오리 (){
-//        a비행아이템 = new 날개();
-//    }
-//}
-//
-//class 흰오리 extends 오리{
-//    흰오리 (){
-//        a비행아이템 = new 날개();
-//    }
-//}
-//class 고무오리 extends 오리{
-//    고무오리(){
-//        a비행아이템 = new 비행아이템없음();
-//    }
-//}
-//class 고무2오리 extends 고무오리{}
-//
-//
-//abstract class 비행아이템{
-//    abstract void 작동 ();
-//}
-//class 날개 extends 비행아이템{
-//    void 작동 (){
-//        System.out.println("오리가 날개로 날아갑니다 ");
-//    }
-//}
-//class 비행아이템없음 extends 비행아이템 {
-//    void 작동 (){
-//        System.out.println("오리는 날 수 없어요ㅜㅜ");
-//    }
-//}
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-//class Main {
-//    public static void main(String[] args) {
-//        청둥오리 a청둥오리 = new 청둥오리();
-//        a청둥오리.날다();
-//        // 출력 : 오리가 날개로 날아갑니다.
-//
-//        흰오리 a흰오리 = new 흰오리();
-//        a흰오리.날다();
-//        // 출력 : 오리가 날개로 날아갑니다.
-//
-//        고무오리 a고무오리 = new 고무오리();
-//        a고무오리.날다();
-//        // 출력 : 저는 날 수 없어요. ㅜㅠ
-//
-//        고무2오리 a고무2오리 = new 고무2오리();
-//        a고무2오리.날다();
-//        // 출력 : 저는 날 수 없어요. ㅜㅠ
-//    }
-//}
-//
-//class 오리 {
-//    void 날다() {
-//        System.out.println("오리가 날개로 날아갑니다.");
-//    }
-//}
-//
-//// 오리 => 부모 클래스
-//// 흰오리 => 자식 클래스
-//// 흰오리 extends 오리 => 흰오리가 오리의 능력을 물려 받는다.
-//// "`흰오리`는 `오리`이다." 라고 자바에게 알려준다.
-//// `A 는 B 이다.` 테스트에 통과하는 것만 상속이 가능하다.
-//// 클래스와 객체는 명사이다.
-//// 메서드는 동사이다.
-//class 흰오리 extends 오리 {
-//
-//}
-//
-//class 청둥오리 extends 오리 {
-//
-//}
-//
-//class 고무오리 extends 오리 {
-//    // 메서드 재정의 라고 합니다.
-//    // 메서드 오버라이드 라고도 합니다.
-//    // 메서드 재정의 => 부모가 물려준 능력을 다시 구현한다.
-//    void 날다() {
-//        System.out.println("저는 날 수 없어요. ㅜㅠ");
-//    }
-//}
-//
-//class 고무2오리 extends 고무오리 {
-//
-//}
-//
-//
-//
-//
-
-
-
-
-
-
-//class Main {
-//    public static void main(String[] args) {
-//        청둥오리 a청둥오리 = new 청둥오리();
-//        a청둥오리.날다();
-//        // 출력 : 오리가 날개로 날아갑니다.
-//
-//        흰오리 a흰오리 = new 흰오리();
-//        a흰오리.날다();
-//        // 출력 : 오리가 날개로 날아갑니다.
-//
-//        고무오리 a고무오리 = new 고무오리();
-//        a고무오리.날다();
-//        // 출력 : 저는 날 수 없어요. ㅜㅠ
-//    }
-//}
-//
-//class 오리 {
-//    void 날다() {
-//        System.out.println("오리가 날개로 날아갑니다.");
-//    }
-//}
-//
-//// 오리 => 부모 클래스
-//// 흰오리 => 자식 클래스
-//// 흰오리 extends 오리 => 흰오리가 오리의 능력을 물려 받는다.
-//// "`흰오리`는 `오리`이다." 라고 자바에게 알려준다.
-//// `A 는 B 이다.` 테스트에 통과하는 것만 상속이 가능하다.
-//// 클래스와 객체는 명사이다.
-//// 메서드는 동사이다.
-//class 흰오리 extends 오리 {
-//
-//}
-//
-//class 청둥오리 extends 오리 {
-//}
-//
-//class 고무오리 extends 오리 {
-//    void 날다() {
-//        System.out.println("저는 날 수 없어요 ㅜㅜ ");
-//    }
-//}
-
-
-
-
-
-
-
-
-
-
-
-//class Main {
-//    public static void main(String[] args) {
-//        청둥오리 a청둥오리 = new 청둥오리();
-//        a청둥오리.날다();
-//        // 출력 : 오리가 날개로 날아갑니다.
-//
-//        흰오리 a흰오리 = new 흰오리();
-//        a흰오리.날다();
-//        // 출력 : 오리가 날개로 날아갑니다.
-//    }
-//}
-//
-//class 오리 {
-//    void 날다() {
-//        System.out.println("오리가 날개로 날아갑니다.");
-//    }
-//}
-//
-//class 청둥오리 extends 오리{
-//
-//}
-//class 흰오리 extends 오리 {
-//
-//}
-//
-
-
-
-//
-///* 가정
-//우리는 게임개발회사에 입사했다.
-//우리에게는 성격좋은 사수 한명이 있다.
-//내가 개발할 게임은 오리시뮬레이션 게임이다.
-//선임이 나의 개발을 도와주진 않지만 조언은 해준다.
-//*/
-//
-///* 요구사항
-//- D1 요구 : 오리를 생성하고 날게하시오.
-//*/
-//
-//class Main {
-//    public static void main(String[] args) {
-//        오리 a오리 = new 오리();
-//        a오리.날다();
-//        // 출력 : 오리가 날개로 날아갑니다.
-//    }
-//}
-//
-//class 오리{
-//    void 날다(){}
-//}
-
-
-
-//    전사타입a a전사타입a = new 전사타입a();
-//        a전사타입a.a무기 = new 칼();
-//                a전사타입a.공격();
-//                //칼
-//
-//                전사타입b a전사타입b = new 전사타입b();
-//                a전사타입b.a무기 = new 활();
-//                a전사타입b.공격();
-//                //활
-//
-//                전사타입c a전사타입c = new 전사타입c();
-//                a전사타입c.a무기 = new 창();
-//                a전사타입c.공격();
-//                //창
-//
-//                전사타입d a전사타입d = new 전사타입d();
-//                a전사타입d.a무기 = new 활();
-//                a전사타입d.공격();
-////활
-//class 전사 {
-//
-//    무기 a무기;
-//
-//    void 공격() {
-//        a무기.작동();
-//    }
-//}
-//
-//class 전사타입a extends 전사 {
-//    void 공격() {
-//        a무기.작동();
-//    }
-//
-//}
-//
-//class 전사타입b extends 전사 {
-//    void 공격() {
-//        a무기.작동();
-//    }
-//}
-//
-//class 전사타입c extends 전사 {
-//    void 공격() {
-//        a무기.작동();
-//    }
-//}
-//
-//class 전사타입d extends 전사 {
-//    void 공격() {
-//        a무기.작동();
-//    }
-//}
-//
-//
-//class 무기 {
-//    void 작동() {
-//    }
-//}
-//
-//class 활 extends 무기 {
-//    void 작동() {
-//        System.out.println("활 로 공격합니다 ");
-//    }
-//}
-//
-//class 창 extends 무기 {
-//    void 작동() {
-//        System.out.println("창으로 공격합니다 ");
-//    }
-//}
-//
-//class 칼 extends 무기 {
-//    void 작동() {
-//        System.out.println("칼 로 공격합니다 ");
-//    }
-//}
-//
-
-////전사 a전사 = new 홍길동();
-//    a전사.a무기 = new 활 ();
-//
-//            a전사.공격();
-//            // 홍길동이가 활로 공격합니다
-//            a전사= new 홍길순();
-//
-//            a전사.공격();
-//            // 홍길순이가 칼로 공격합니다
-//            //
-//
-//            a전사.a무기=new 창();
-//            a전사.공격();
-//class 전사 {
-//    String 이름;
-//    무기 a무기;
-//    void 공격(){
-//        a무기.작동(this.이름);
-//    }
-//}
-//
-//class 홍길동 extends 전사 {
-//    홍길동 (){
-//        이름= "홍길동";
-//    }
-//}
-//class 홍길순 extends 전사{
-//    홍길순(){
-//        이름 = "홍길순";
-//        a무기 = new 칼();
-//    }
-//}
-//
-//
-//class 무기 {
-//    String 무기이름;
-//    void 작동 (String name){
-//        System.out.println(name +"이가 "+무기이름 + "으로 공격합니다");
-//    }
-//}
-//
-//class 활 extends 무기 {
-//    활(){
-//        무기이름 = "활";
-//    }
-//
-//}
-//class 칼 extends 무기 {
-//    칼(){
-//        무기이름 = "칼";
-//    }
-//}
-//
-//class 창 extends 무기 {
-//    창(){
-//        무기이름 = "창";
-//    }
+// //*************************동물이름이 클래스인지 생성자인지 모름
+// 사람(){
+//  super("기린", 20);
+////  **********************************************수퍼를 이용해 생성자에 접근 ********
+// }
 //}
